@@ -1,1 +1,1 @@
-A placeholder README to initialize a repo
+A placeholder README to initialize a repo, except cooler
