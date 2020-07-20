@@ -16,14 +16,14 @@
 */
 typedef struct func_struct
 {
-	char *s;
-	void (*f)(char *);
+	char s;
 } func_t;
 
 int _putchar(char c);
-void char_handler(char *);
-void string_handler(char *);
-void point_handler(char *);
-void int_handler(char *);
+int char_handler(char *);
+int string_handler(char *);
+int point_handler(char *);
+int int_handler(char *);
+int _printf(const char *format, ...);
 
 #endif
