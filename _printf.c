@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	va_list vl;
 	int i, j;
 	func_t func[] = {
-		/*{'d', int_handler(gcvt(va_arg(vl, double)))},*/
+		{'d'},
 		{'s'},
 		{'c'},
 		{'i'},
@@ -26,10 +26,13 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == func[j].s && format[i + 1] != '\0')
 				{
-					printf("haha you found the function");
+					printf("(you found a correct escape character)\n");
+					/*get_format(func[j].s);*/
 				}
 			}
+			i++;
 		}
+		putchar(format[i]);
 	}
 	va_end(vl);
 	return(0);
