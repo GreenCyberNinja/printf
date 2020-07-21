@@ -28,13 +28,14 @@ int _printf(const char *format, ...)
 
 				if (format[i + 1] == func[j].s && format[i + 1] != '\0')
 				{
+					i += 1;
 					getfop(func[j].s, vl);
 				}
 			}
-			i += 2;
+			i += 1;
 		}
 		print_c(format[i]);
 	}
 	va_end(vl);
-	return (0);
+	return (i);
 }
