@@ -1,6 +1,6 @@
 #include "holberton.h"
 int main(void)
 {
-	_printf("pee pee haha %s", "poop");
+	_printf("Your character is: %c", 'z');
 	return(0);
 }

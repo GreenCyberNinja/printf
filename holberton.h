@@ -5,10 +5,10 @@
 #include <string.h>
 #include <stdarg.h>
 #include <limits.h>
-
+#include <unistd.h>
 /**
 * struct func_struct - struct used in conversion specifier detection
-* @spec: specifier
+* @s: specifier
 * @f: function for specifier
 *
 *
@@ -19,11 +19,12 @@ typedef struct func_struct
 	char s;
 } func_t;
 
-int _putchar(char c);
-int char_handler(char *);
-int string_handler(char *);
-int point_handler(char *);
-int int_handler(char *);
+int print_c(char c);
+int getfop(char, va_list);
+int char_handler(va_list);
+int string_handler(va_list);
+int point_handler(va_list);
+int int_handler(va_list);
 int _printf(const char *format, ...);
 int _strlen(char *s);
 #endif

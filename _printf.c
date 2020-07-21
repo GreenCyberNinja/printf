@@ -26,11 +26,10 @@ int _printf(const char *format, ...)
 			{
 				if (format[i + 1] == func[j].s && format[i + 1] != '\0')
 				{
-					printf("(you found a correct escape character)\n");
-					/*get_format(func[j].s);*/
+					getfop(func[j].s, vl);
 				}
 			}
-			i++;
+			i += 2;
 		}
 		putchar(format[i]);
 	}
