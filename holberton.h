@@ -8,11 +8,8 @@
 #include <unistd.h>
 /**
 * struct func_struct - struct used in conversion specifier detection
-* @s: specifier
+* @spec: specifier
 * @f: function for specifier
-*
-*
-*
 */
 typedef struct func_struct
 {
