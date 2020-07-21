@@ -25,5 +25,5 @@ int string_handler(char *);
 int point_handler(char *);
 int int_handler(char *);
 int _printf(const char *format, ...);
-
+int _strlen(char *s);
 #endif
