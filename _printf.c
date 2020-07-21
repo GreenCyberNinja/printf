@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
+* _printf - prints string and converts imput to stdout
 *
-*
-*
-*
+* @format: string to be printed with args
+* Return: 0
 */
 int _printf(const char *format, ...)
 {
@@ -23,7 +23,6 @@ int _printf(const char *format, ...)
 
 		if (format[i] == '%')
 		{
-			
 			for (j = 0; func[j].s != '\0'; j++)
 			{
 
@@ -37,5 +36,5 @@ int _printf(const char *format, ...)
 		print_c(format[i]);
 	}
 	va_end(vl);
-	return(0);
+	return (0);
 }
