@@ -15,12 +15,12 @@ int getfop(char c, va_list vl)
 		case 's':
 			string_handler(vl);
 			break;
-/**		case 'i':
+		case 'i':
 			int_handler(vl);
 			break;
-		case 'd':
+		/**case 'd':
 			point_handler(vl);
-			break; */
+			break;*/
 		default:
 			break;
 	}
