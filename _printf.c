@@ -10,11 +10,11 @@ int _printf(const char *format, ...)
 	va_list vl;
 	int i, j;
 	func_t func[] = {
-		{'d'},
-		{'s'},
-		{'c'},
-		{'i'},
-		{'\0'}
+		{'d', point_handler},
+		{'s', string_handler},
+		{'c', char_handler},
+		{'i', int_handler},
+		{'\0', NULL}
 	};
 
 	va_start(vl, format);
@@ -29,12 +29,14 @@ int _printf(const char *format, ...)
 
 				if (format[i + 1] == func[j].s && format[i + 1] != '\0')
 				{
-					getfop(func[j].s, vl);
+					func[j].f(vl);
+					i += 1;
 				}
 			}
-			i += 2;
+			i += 1;
 		}
-		print_c(format[i]);
+		if (format[i] != '\0')
+			print_c(format[i]);
 	}
 	va_end(vl);
 	return(0);
