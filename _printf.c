@@ -8,7 +8,9 @@
 int _printf(const char *format, ...)
 {
 	va_list vl;
-	int i, j;
+	int i, j, sum = 0;
+
+
 	func_t func[] = {
 		{'d', point_handler},
 		{'s', string_handler},
@@ -30,8 +32,9 @@ int _printf(const char *format, ...)
 
 				if (format[i + 1] == func[j].s && format[i + 1] != '%')
 				{
-					func[j].f(vl);
+					sum += func[j].f(vl);
 					i += 2;
+					break;
 				}
 			}
 			if (format[i + 1] == '%')
@@ -41,5 +44,5 @@ int _printf(const char *format, ...)
 			print_c(format[i]);
 	}
 	va_end(vl);
-	return (i);
+	return (i + sum);
 }
