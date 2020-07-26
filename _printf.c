@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	va_list vl;
-	int i, j, sum = 0;
+	int i, j, sum = 0, match = 0;
 
 
 	func_t func[] = {
@@ -30,10 +30,10 @@ int _printf(const char *format, ...)
 			for (j = 0; func[j].s != '\0'; j++)
 			{
 
-				if (format[i + 1] == func[j].s && format[i + 1] != '%')
+				if (format[i + 1] == func[j].s && format[i + 1] != '\0')
 				{
 					sum += func[j].f(vl);
-					i += 2;
+					i += 2, match += 2;
 					break;
 				}
 			}
@@ -42,7 +42,9 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] != '\0')	
 			print_c(format[i]);
+		else
+			break;
 	}
 	va_end(vl);
-	return (i + sum);
+	return ((i + sum) - match);
 }
