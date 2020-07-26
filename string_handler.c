@@ -12,6 +12,10 @@ int string_handler(va_list vl)
 
 	s = va_arg(vl, char *);
 
+	if (s == NULL)
+	{
+		s = ("(null)");
+	}
 	for (i = 0; s[i] != '\0'; i++)
 		print_c(s[i]);
 	return (i);

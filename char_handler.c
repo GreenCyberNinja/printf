@@ -8,7 +8,7 @@
 */
 int char_handler(va_list vl)
 {
-	char cr = va_arg(vl, int);
-
-	return (write(1, &cr, 1));
+	char c = va_arg(vl, int);
+	print_c(c);
+	return(1);
 }
