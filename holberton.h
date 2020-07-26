@@ -14,6 +14,7 @@
 typedef struct func_struct
 {
 	char s;
+	int (*f)(va_list);
 } func_t;
 
 int print_c(char c);
