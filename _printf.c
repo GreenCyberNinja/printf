@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int i, j, sum = 0, match = 0;
 
 	func_t func[] = {
-		{'d', point_handler},
+		/*{'d', point_handler},*/
 		{'s', string_handler},
 		{'c', char_handler},
 		{'i', int_handler},
