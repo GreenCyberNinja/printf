@@ -23,7 +23,7 @@ void rev_string(char *s)
 */
 int int_handler(va_list vl)
 {
-	int i = va_arg(vl, int), j = 0, stlp = 0;
+	int i = va_arg(vl, long int), j = 0, stlp = 0;
 	char s[11];
 
 	while ((i / 10) > 0)
