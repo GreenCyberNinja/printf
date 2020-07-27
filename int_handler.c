@@ -45,5 +45,5 @@ int int_handler(va_list vl)
 		print_c(s[stlp]);
 		stlp++;
 	}
-	return (0);
+	return (stlp);
 }
