@@ -8,7 +8,5 @@
 int point_handler(va_list vl)
 {
 	int a = va_arg(vl, int);
-
-	a--;
-	return (0);
+	return (a);
 }
