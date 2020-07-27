@@ -23,11 +23,27 @@ void rev_string(char *s)
 */
 int int_handler(va_list vl)
 {
-	int i = va_arg(vl, int);
+	int i = va_arg(vl, int), j = 0, stlp = 0;
+	char s[11];
 
-	while ((i /= 10) > 0)
+	while ((i / 10) > 0)
 	{
-		print_c(i % 10 + '0');
+		s[j] = (char)(i % 10 + '0');
+		i /= 10;
+		j++;
+	}
+	s[j] = (char)(i % 10 + '0');
+	j++;
+	while (j < 11)
+	{
+		s[j] = '\0';
+		j++;
+	}
+	rev_string(s);
+	while (s[stlp] != '\0')
+	{
+		print_c(s[stlp]);
+		stlp++;
 	}
 	return (0);
 }
